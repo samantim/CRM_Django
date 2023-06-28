@@ -1,0 +1,12 @@
+{% extends 'phonebook/layout.html' %}
+
+{% block body %}
+    <ul>
+        {% for customer in customers %}
+            <li>
+                <a href="{% url 'phonebook:customer_by_id' customer.id %}">{{ customer }}</a>
+            </li>            
+        {% endfor %}
+    </ul>
+    <a href="{% url 'phonebook:add_customer' %}">Add new customer</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'phonebook/layout.html' %}
+{% block body %}
+    <ul>
+        {% for province in provinces %}
+            <li>
+                {{province}}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'phonebook:add_province' %}">add new province</a>
+{% endblock %}

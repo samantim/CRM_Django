@@ -1,0 +1,12 @@
+{% extends 'phonebook/layout.html' %}
+
+{% block body %}
+    <ul>
+        {% for city in cities %}
+            <li>
+                {{ city }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'phonebook:add_city' %}">add new city</a>
+{% endblock %}

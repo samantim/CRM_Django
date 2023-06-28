@@ -1,0 +1,17 @@
+{% extends 'phonebook/layout.html' %}
+
+{% block body %}
+
+    <label>name: </label><b>{{ customer.firstname }} {{ customer.lastname }}</b><br>
+    <label>customertype: </label>{% if customer.customertype == 1 %}
+                                    person
+                                {% else %}
+                                    company
+                                {% endif %}<br>
+    <label>city: </label>{{ customer.city }}<br>
+    <label>address: </label>{{ customer.address }}<br>
+    <label>postalcode: </label>{{ customer.postalcode }}<br>
+
+    <br>
+    <a href="{% url 'phonebook:contacts' customer.id %}">contacts</a>
+{% endblock %}

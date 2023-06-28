@@ -1,0 +1,11 @@
+{% extends 'phonebook/layout.html' %}
+
+{% block body %}
+    <div style="color: green;">Add new contact of {{ customer }}</div>
+    <br>
+    <form action="{% url 'phonebook:add_contact' customer.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <input type="submit" value="save">
+    </form>
+{% endblock %}

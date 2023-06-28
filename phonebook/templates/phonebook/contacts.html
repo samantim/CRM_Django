@@ -1,0 +1,14 @@
+{% extends 'phonebook/layout.html' %}
+
+{% block body %}
+    <ul>
+        <div style="color: green;">Contacts of {{customer}}</div>
+        <br>
+        {% for contact in contacts %}
+            <li>
+                <a href="{% url 'phonebook:contact_by_id' customer.id contact.id %}" >{{ contact }}</a>
+            </li>            
+        {% endfor %}
+    </ul>
+    <a href="{% url 'phonebook:add_contact' customer.id %}">add new contact</a>
+{% endblock %}

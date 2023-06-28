@@ -1,0 +1,6 @@
+{% extends 'phonebook/layout.html' %}
+{% block body %}
+    <a href="{% url 'phonebook:provinces' %}">Provinces</a>
+    <a href="{% url 'phonebook:cities' %}">cities</a>
+    <a href="{% url 'phonebook:customers' %}">customers</a>
+{% endblock %}

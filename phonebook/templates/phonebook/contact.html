@@ -1,0 +1,13 @@
+{% extends 'phonebook/layout.html' %}
+
+{% block body %}
+    
+    <label>name: </label><b>{{ contact.name }}</b><br>
+    <label>description: </label>{{ contact.description }}<br>
+    <label>phonenumber: </label>{{ contact.phonenumber }}<br>
+    <label>mobilenumber: </label>{{ contact.mobilenumber }}<br>
+    <label>faxnumber: </label>{{ contact.faxnumber }}<br>
+    <label>email: </label>{{ contact.email }}<br>
+    
+{% endblock %}
+
