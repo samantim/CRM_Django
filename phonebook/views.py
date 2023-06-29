@@ -6,10 +6,12 @@ from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
+
 # Create your views here.
 
 def index(request : HttpRequest):
     return render(request, "phonebook/index.html")
+
 
 def provinces(request : HttpRequest):
     return render(request, "phonebook/provinces.html",{

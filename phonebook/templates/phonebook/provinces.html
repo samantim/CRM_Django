@@ -1,11 +1,17 @@
 {% extends 'phonebook/layout.html' %}
 {% block body %}
-    <ul>
-        {% for province in provinces %}
-            <li>
-                {{province}}
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'phonebook:add_province' %}">add new province</a>
+    {% if not request.user.is_authenticated %}
+        Login required!<br>
+        <a href="{% url 'users:login' %}">Login</a>
+    {% else %}
+        <ul>
+            {% for province in provinces %}
+                <li>
+                    {{province}}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'phonebook:add_province' %}">add new province</a>
+    {% endif %}
+
 {% endblock %}
